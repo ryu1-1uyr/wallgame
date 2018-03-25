@@ -65,3 +65,18 @@ const getDomPositionsAllWalls = () => {
         return returnPosition;
     });
 };
+
+const moveWall = $wall => {
+    const right = parseInt(getDomStyle($wall, 'right'));
+    setDomStyle($wall, 'right', `${right + 20}px`);
+};
+
+/**
+ * エリアからはみ出た壁DOMを削除します。
+ */
+const removeWallIfProtruded = $wall => {
+    const left = parseInt(getDomStyle($wall, 'left'));
+    if(left < 0) {
+        removeDom($wall);
+    }
+};
