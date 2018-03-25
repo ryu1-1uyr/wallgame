@@ -1,6 +1,6 @@
 let colors = ['red','blue','black','pink','green'] ;
 let getColor = () =>{
-    let num = Math.floor(Math.random() * 5);
+    let num = Math.floor(Math.random() * colors.length);
     return colors[num];
 };
 
