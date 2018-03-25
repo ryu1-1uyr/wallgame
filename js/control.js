@@ -4,7 +4,15 @@ let getColor = () =>{
     return colors[num];
 };
 
+/**
+ * ゲームオーバーか調べます。
+ */
+const isGameover = () => getDomAttr($app, 'data-gamveover');
+
 document.addEventListener('keydown', event => {
+    if(isGameover()) {
+        return;
+    }
 
     switch(event.key) {
         case 'ArrowUp':
