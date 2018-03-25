@@ -50,6 +50,10 @@ const defaultSpeed = 500;
  */
 const step = speed => {
     const timer = setTimeout(() => {
+        if(isGameover()) {
+            return;
+        }
+
         plusScore(10);
 
         findDomAll('.wall').forEach($wall => {
